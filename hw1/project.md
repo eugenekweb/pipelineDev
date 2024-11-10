@@ -184,7 +184,7 @@
 ## 5. Диаграмма Ганта
 
 ```mermaid
-%%{init: {'theme': 'forest'}}%%
+%%{init: {'theme': 'neutral'}}%%
 gantt
     dateFormat YYYY-MM-DD
     axisFormat  %d.%m(%Wн)

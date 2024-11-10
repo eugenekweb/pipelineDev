@@ -187,7 +187,7 @@
 %%{init: {'theme': 'default'}}%%
 gantt
     dateFormat YYYY-MM-DD
-    axisFormat  %d.%m(%Wн)
+    axisFormat  %d.%m
     tickInterval 1week
     weekday monday
     excludes weekends

@@ -4,3 +4,7 @@
 
 - [1. Разработка проекта по методологии Waterfall](./hw1/project.md)
   - [Диаграмма Ганта](./hw1/project.md#5-%D0%B4%D0%B8%D0%B0%D0%B3%D1%80%D0%B0%D0%BC%D0%BC%D0%B0-%D0%B3%D0%B0%D0%BD%D1%82%D0%B0)
+
+- [2. Разработка проекта по методологии RAD](./hw2/project2.md)
+  - [Канбан-доска проекта](https://ru.yougile.com/board/ici9ndjjde3o)
+

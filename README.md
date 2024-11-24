@@ -8,3 +8,6 @@
 - [2. Разработка проекта по методологии RAD](./hw2/project2.md)
   - [Канбан-доска проекта](https://ru.yougile.com/board/ici9ndjjde3o)
 
+- [3. Отчет об анализе текущего процесса разработки](./hw3/project3.md)
+  - [Fishbone Diagram](https://web.mindonmap.com/app/viewer-ZTJRMTc4ZVExNzMy)
+

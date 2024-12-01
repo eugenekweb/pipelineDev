@@ -67,7 +67,7 @@ jobs:
               working-directory: ./hw5/app
               run: |
                   npm ci
-                  echo "module.exports = Calculator;" >> hw5/app/src/calc.js
+                  echo "module.exports = Calculator;" >> src/calc.js
                   npm test
 
     build_and_run_tests_windows:
@@ -88,7 +88,7 @@ jobs:
               working-directory: ./hw5/app
               run: |
                   npm ci
-                  echo "module.exports = Calculator;" >> hw5/app/src/calc.js
+                  echo "module.exports = Calculator;" >> src/calc.js
                   npm test
 
     publish_app:

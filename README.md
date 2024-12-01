@@ -20,4 +20,4 @@
 
 -   [5. Отчет по практическому заданию CI/CD в Github Actions](./hw5/app/)
 
-    -   <a href="http://example.com" target="_blank">Опубликованный проект «Калькулятор»</a>
+    -   <a href="https://eugenekweb.github.io/pipelineDev/" target="_blank">Опубликованный проект «Калькулятор»</a>

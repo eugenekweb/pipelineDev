@@ -1,0 +1,14 @@
+{
+  "name": "ci-cd",
+  "version": "1.0.0",
+  "description": "Deploy wep-app Pipelines HW5",
+  "main": "calc.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "author": "Eugene Kovalev",
+  "license": "ISC",
+  "devDependencies": {
+    "jest": "^29.7.0"
+  }
+}

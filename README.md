@@ -17,3 +17,7 @@
     -   [Fishbone Diagram](https://web.mindonmap.com/app/viewer-ZTJRMTc4ZVExNzMy)
 
 -   [4. Отчет по практическому заданию Docker](./hw4/project4.md)
+
+-   [5. Отчет по практическому заданию CI/CD в Github Actions](./hw5/app/)
+
+    -   <a href="http://example.com" target="_blank">Опубликованный проект «Калькулятор»</a>

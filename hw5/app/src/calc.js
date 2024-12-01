@@ -62,4 +62,4 @@ var Calculator = /** @class */ (function () {
     };
     return Calculator;
 }());
-module.exports = Calculator;
+

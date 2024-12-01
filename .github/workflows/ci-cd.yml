@@ -2,8 +2,8 @@ name: Run tests and deploy Calc to Github Pages
 
 on:
     workflow_dispatch: # Run from Github Actions UI
-    # push:
-    #   branches: [main]
+    push:
+      branches: [main]
     pull_request:
         branches: [main] # On Pull Requests to main branch
 
@@ -33,9 +33,9 @@ jobs:
 
             - name: Prepare files for GitHub Pages
               run: |
-                  mkdir -p public
+                  mkdir -p public/js
                   cp hw5/app/index.html public/
-                  cp hw5/app/src/calc.js public/
+                  cp hw5/app/src/calc.js public/js/
                   echo "module.exports = Calculator;" >> hw5/app/src/calc.js
 
             - name: Install dependencies and run tests

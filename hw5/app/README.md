@@ -13,6 +13,10 @@
 
 -   [код файла ci-cd.yml](https://github.com/eugenekweb/pipelineDev/blob/main/.github/workflows/ci-cd.yml)
 
+#### Запись выполнения workflow и результата
+
+-   [workflow_video.mkv](../video/workflow_video.mkv)
+
 #### Описание настроенных джобов
 
 ##### Triggers
@@ -133,4 +137,3 @@ with:
 ```
 
 Сохраняет папку `public` для дальнейшей публикации.
-

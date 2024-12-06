@@ -1,0 +1,26 @@
+# tasks file for nginx
+- name: Install nginx
+  ansible.builtin.apt:
+    name: nginx
+    state: present
+    update_cache: true
+
+- name: Configure nginx
+  ansible.builtin.template:
+    src: nginx.conf.j2
+    dest: /etc/nginx/nginx.conf
+    mode: "0600"
+  notify: Restart nginx
+
+- name: Replace <title> header in Nginx default page
+  ansible.builtin.lineinfile:
+    path: /usr/share/nginx/html/index.html
+    regexp: '<title>.*</title>'
+    line: '<title>{{ nginx_message }}</title>'
+    backup: true
+
+- name: Ensure nginx is running
+  ansible.builtin.service:
+    name: nginx
+    state: started
+    enabled: true

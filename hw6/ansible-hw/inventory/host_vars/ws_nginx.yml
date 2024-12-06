@@ -1,0 +1,2 @@
+nginx_port: 80
+nginx_message: "Welcome, Nginx user!"

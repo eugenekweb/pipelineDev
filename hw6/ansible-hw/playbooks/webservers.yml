@@ -1,0 +1,7 @@
+- name: Play for implement webservers
+  hosts: webservers
+  roles:
+    - role: nginx
+      when: inventory_hostname == "ws_nginx"
+    - role: apache
+      when: inventory_hostname == "ws_apache"

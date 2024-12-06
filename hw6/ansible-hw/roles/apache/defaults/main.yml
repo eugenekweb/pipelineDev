@@ -1,0 +1,4 @@
+---
+# defaults file for apache
+apache_port: 80
+apache_message: "Default Apache page"

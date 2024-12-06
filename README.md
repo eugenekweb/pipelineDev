@@ -21,3 +21,7 @@
 -   [5. Отчет по практическому заданию CI/CD в Github Actions](./hw5/app/)
 
     -   <a href="https://eugenekweb.github.io/pipelineDev/" target="_blank">Опубликованный проект «Калькулятор»</a>
+
+-   [6. Отчет по развертыванию Nginx + Apache через Ansible](./hw6/project6.md)
+
+    -   [Проект Ansible](./hw6/ansible-hw/)

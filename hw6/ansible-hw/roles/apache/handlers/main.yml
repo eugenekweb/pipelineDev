@@ -1,0 +1,9 @@
+---
+# handlers file for apache
+
+- name: Restart apache
+  ansible.builtin.service:
+    name: "{{ apache_service }}"
+    state: restarted
+  vars:
+    apache_service: "{{ 'apache2' if ansible_distribution in ['Ubuntu', 'Debian'] else 'httpd' }}"

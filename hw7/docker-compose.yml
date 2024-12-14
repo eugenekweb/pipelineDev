@@ -1,0 +1,31 @@
+services:
+  user_service:
+    build:
+      context: .
+      dockerfile: ./servers/users.Dockerfile
+    ports:
+      - "36001:36001"
+    networks:
+      - grpc_network
+
+  task_service:
+    build:
+      context: .
+      dockerfile: ./servers/tasks.Dockerfile
+    ports:
+      - "36002:36002"
+    networks:
+      - grpc_network
+
+  notification_service:
+    build:
+      context: .
+      dockerfile: ./servers/notifications.Dockerfile
+    ports:
+      - "36003:36003"
+    networks:
+      - grpc_network
+
+networks:
+  grpc_network:
+    driver: bridge

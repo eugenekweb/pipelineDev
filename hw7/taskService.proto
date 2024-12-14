@@ -1,0 +1,25 @@
+syntax = "proto3";
+package task;
+
+service TaskService {
+    rpc CreateTask (CreateTaskRequest) returns (CreateTaskResponse);
+    rpc GetTaskStatus (GetTaskStatusRequest) returns (GetTaskStatusResponse);
+}
+
+message CreateTaskRequest {
+    string user_id = 1;
+    string description = 2;
+}
+
+message CreateTaskResponse {
+    string task_id = 1;
+    string message = 2;
+}
+
+message GetTaskStatusRequest {
+    string task_id = 1;
+}
+
+message GetTaskStatusResponse {
+    string status = 1;
+}

@@ -70,9 +70,9 @@ graph TD
     TaskService -->|Создание
     уведомления| NotificationService
 
-    classDef service fill:#6ef,stroke:#333,stroke-width:2px;
-    classDef database fill:#99f,stroke:#333,stroke-width:2px;
-    classDef client fill:#9f9,stroke:#333,stroke-width:2px;
+    classDef service fill:#369,stroke:#333,stroke-width:2px;
+    classDef database fill:#339,stroke:#333,stroke-width:2px;
+    classDef client fill:#393,stroke:#333,stroke-width:2px;
 
     class UserService,TaskService,NotificationService service;
     class Database database;

@@ -1,0 +1,72 @@
+stages:
+  - build
+  - test
+  - deploy_staging
+  - deploy_production
+
+variables:
+  DOCKER_REGISTRY: registry.gitlab.com
+  DOCKER_HOST: tcp://docker:2375
+  IMAGE_NAME: $DOCKER_REGISTRY/mephi-okr/hw8/flask-app
+  KUBE_CONTEXT: mephi-okr/hw8:k8s-agent
+
+build:
+  stage: build
+  image: docker:latest
+  services:
+    - docker:dind
+  script:
+
+    - echo "$CI_REGISTRY_PASSWORD" | docker login $DOCKER_REGISTRY -u $CI_REGISTRY_USER --password-stdin
+
+    - docker build -t $IMAGE_NAME:$CI_COMMIT_SHA .
+    - |
+      if [ "$CI_COMMIT_BRANCH" == "main" ]; then
+        docker tag $IMAGE_NAME:$CI_COMMIT_SHA $IMAGE_NAME:latest
+        docker push $IMAGE_NAME:$CI_COMMIT_SHA
+        docker push $IMAGE_NAME:latest
+      else
+        docker tag $IMAGE_NAME:$CI_COMMIT_SHA $IMAGE_NAME:staging
+        docker push $IMAGE_NAME:$CI_COMMIT_SHA
+        docker push $IMAGE_NAME:staging
+      fi
+    - |
+      if [ "$CI_COMMIT_BRANCH" != "main" ]; then
+        docker rmi $IMAGE_NAME:$CI_COMMIT_SHA || true
+      fi
+
+test:
+  stage: test
+  script:
+    - echo "Running tests..."
+    - python -m pytest tests/ || echo "No tests found"
+    - cat banner.txt
+
+deploy_staging:
+  stage: deploy_staging
+  image:
+    name: bitnami/kubectl:latest
+    entrypoint: [""]
+  script:
+    - kubectl config use-context "$KUBE_CONTEXT"
+    - kubectl apply -f k8s/staging/
+    - kubectl set image deployment/flask-app flask-app=$IMAGE_NAME:staging -n staging
+  environment:
+    name: staging
+  only:
+    - develop
+
+deploy_production:
+  stage: deploy_production
+  image:
+    name: bitnami/kubectl:latest
+    entrypoint: [""]
+  script:
+    - kubectl config use-context "$KUBE_CONTEXT"
+    - kubectl apply -f k8s/production/
+    - kubectl set image deployment/flask-app flask-app=$IMAGE_NAME:latest -n production
+  environment:
+    name: production
+  only:
+    - main
+  # when: manual

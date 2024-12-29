@@ -1,0 +1,35 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: flask-app
+  namespace: staging
+  labels:
+    app: flask-app
+    environment: staging
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: flask-app
+      environment: staging
+  template:
+    metadata:
+      labels:
+        app: flask-app
+        environment: staging
+    spec:
+      containers:
+      - name: flask-app
+        image: registry.gitlab.com/mephi-okr/hw8/flask-app:staging
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 6088
+        resources:
+          limits:
+            memory: "256Mi"
+            cpu: "500m"
+          requests:
+            memory: "128Mi"
+            cpu: "250m"
+      imagePullSecrets:
+      - name: registry-auth

@@ -1,0 +1,8 @@
+user_access:
+  access_as:
+    agent: {}
+  projects:
+    - id: mephi-okr/hw8
+ci_access:
+  projects:
+    - id: mephi-okr/hw8
